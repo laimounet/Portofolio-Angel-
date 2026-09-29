@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Angel Celestin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="bienvenue">
+        <img src="Documents/bienvenue.png" alt="Bienvenue">
+    </div>
+
+  
+    <header class="header">
+        <h1>Angel Celestin</h1>
+        <div class="socials">
+            <a href="https://www.instagram.com/amaxi.mln" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/maximilien-c%C3%A9lestin-8878503a7/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/laimounet" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile">
+            <img src="101_0067.JPG" alt="Photo Angel Celestin" width="200" height="250">
+            <div class="bio">
+                Je suis Angel Celestin, étudiant en première année de BTS SIO.
+            </div>
+            <a href="cv.html" class="btn-cv">Voir mon CV</a>
+            <p id="date"></p>
+        </section>
+
+        <section class="texte">
+            <h2>À propos</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+
+        <section class="mindmap-section">
+            <h2>Mes projets</h2>
+            <div class="mindmap">
+                <div class="tige tige1"></div>
+                <div class="tige tige2"></div>
+                <div class="tige tige3"></div>
+                <div class="tige tige4"></div>
+                <div class="tige tige5"></div>
+
+                <div class="bulle centre">Mes projets</div>
+                <a href="projet1.html" class="bulle projet1">Projet 1</a>
+                <a href="projet2.html" class="bulle projet2">Projet 2</a>
+                <a href="projet3.html" class="bulle projet3">Projet 3</a>
+                <a href="projet4.html" class="bulle projet4">Projet 4</a>
+                <a href="projet5.html" class="bulle projet5">Projet 5</a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        var bienvenue = document.getElementById("bienvenue");
+
+        // L'écran de bienvenue ne s'affiche qu'une fois par visite
+        if (sessionStorage.getItem("bienvenueVue")) {
+            bienvenue.remove();
+        } else {
+            sessionStorage.setItem("bienvenueVue", "oui");
+
+            setTimeout(function () {
+                bienvenue.classList.add("fondu");
+            }, 1000);
+
+            setTimeout(function () {
+                bienvenue.remove();
+            }, 2000);
+        }
+    </script>
+
+</body>
+
+</html>

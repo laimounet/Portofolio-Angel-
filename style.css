@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0eff2;
+    color: #111111;
+}
+
+/* Écran de bienvenue affiché par-dessus la page au chargement */
+#bienvenue {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #dfdaca;
+    transition: opacity 1s ease;
+}
+
+#bienvenue img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ajoutée par le JavaScript pour lancer le fondu */
+#bienvenue.fondu {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #6b0d1e;
+}
+
+.socials a {
+    color: #6b0d1e;
+    font-size: 1.5rem;
+    margin-left: 15px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.socials a:hover {
+    opacity: 0.7;
+}
+
+.profile {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.profile img {
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.bio {
+    margin: 20px auto;
+    max-width: 500px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.btn-cv {
+    display: inline-block;
+    background-color: #6b0d1e;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-cv:hover {
+    background-color: #4a0914;
+}
+
+#date {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.texte {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px 25px;
+    background-color: #ffffff;
+    border-left: 4px solid #6b0d1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.texte h2 {
+    margin-bottom: 10px;
+    color: #6b0d1e;
+}
+
+.texte p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.mindmap-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.mindmap {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 40px auto;
+}
+
+.bulle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #6b0d1e;
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+    text-align: center;
+    z-index: 2;
+}
+
+a.bulle:hover {
+    transform: scale(1.2);
+}
+
+.centre {
+    top: 160px;
+    left: 260px;
+    background-color: #4a0914;
+}
+
+.projet1 { top: 20px;  left: 260px; }
+.projet2 { top: 110px; left: 60px;  }
+.projet3 { top: 290px; left: 110px; }
+.projet4 { top: 290px; left: 410px; }
+.projet5 { top: 110px; left: 460px; }
+
+/* Chaque tige part du centre de la bulle centrale (300px, 200px) */
+.tige {
+    position: absolute;
+    top: 198.5px;
+    left: 300px;
+    height: 3px;
+    background-color: #6b0d1e;
+    transform-origin: left center;
+    z-index: 1;
+}
+
+.tige1 { width: 140px; transform: rotate(-90deg);  }
+.tige2 { width: 206px; transform: rotate(-166deg); }
+.tige3 { width: 198px; transform: rotate(139deg);  }
+.tige4 { width: 198px; transform: rotate(41deg);   }
+.tige5 { width: 206px; transform: rotate(-14deg);  }
+
+/* Petits écrans : la mindmap est réduite pour ne pas déborder */
+@media (max-width: 640px) {
+    /* transform: scale ne réduit pas la place occupée : on coupe ce qui dépasse */
+    .mindmap-section {
+        overflow: hidden;
+    }
+
+    .mindmap {
+        transform: scale(0.55);
+        transform-origin: top left;
+        margin: 20px 0 -160px calc(50% - 165px);
+    }
+}
