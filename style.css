@@ -11,7 +11,6 @@ body {
     color: #111111;
 }
 
-/* Écran de bienvenue affiché par-dessus la page au chargement */
 #bienvenue {
     position: fixed;
     top: 0;
@@ -29,7 +28,6 @@ body {
     object-fit: cover;
 }
 
-/* Ajoutée par le JavaScript pour lancer le fondu */
 #bienvenue.fondu {
     opacity: 0;
     pointer-events: none;
@@ -161,7 +159,7 @@ a.bulle:hover {
 .projet4 { top: 290px; left: 410px; }
 .projet5 { top: 110px; left: 460px; }
 
-/* Chaque tige part du centre de la bulle centrale (300px, 200px) */
+
 .tige {
     position: absolute;
     top: 198.5px;
@@ -178,7 +176,7 @@ a.bulle:hover {
 .tige4 { width: 198px; transform: rotate(41deg);   }
 .tige5 { width: 206px; transform: rotate(-14deg);  }
 
-/* Petits écrans : la mindmap est réduite pour ne pas déborder */
+
 @media (max-width: 640px) {
     /* transform: scale ne réduit pas la place occupée : on coupe ce qui dépasse */
     .mindmap-section {
