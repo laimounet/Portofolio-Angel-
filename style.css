@@ -178,7 +178,7 @@ a.bulle:hover {
 
 
 @media (max-width: 640px) {
-    /* transform: scale ne réduit pas la place occupée : on coupe ce qui dépasse */
+
     .mindmap-section {
         overflow: hidden;
     }
